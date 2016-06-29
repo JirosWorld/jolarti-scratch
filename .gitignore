@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # geen git beheer in de volgende bestanden #README.md.DS_Store
 
+=======
+>>>>>>> da195d2365ce102662d4cdd04b709533928376b5
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -16,4 +19,9 @@ wp-content/plugins/hello.php
 /license.txt
 /readme.html
 /sitemap.xml
+<<<<<<< HEAD
 /sitemap.xml.gz
+=======
+/sitemap.xml.gz
+
+>>>>>>> da195d2365ce102662d4cdd04b709533928376b5
