@@ -3,16 +3,20 @@ Theme Name: Jolarti Scratch Theme
 Author: Jiro Ghianni
 Author URI: http://www.alecaddd.com/wordpress-101-wordpress-beginner-developers/
 Theme URI: https://github.com/Alecaddd/WordPress101
-Description: Jolarti Scratch Wordpress Template is a simple starter theme, based on the simple codings of Alessandro Castellani.
+Description: Jolarti Scratch Wordpress Template is a simple starter theme with DUTCH help comments, based on the simple codings of Alessandro Castellani.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, rainbow, one-column, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, flexible-header, post-formats, rtl-language-support
 */
 
+/*
+This is the default style - please note all other styles are in the CSS folder
+*/
+
 body {
-      margin: 0.5em;
-      padding: 0.5em;
+      margin: 1em;
+      padding: 1em;
       background-color: #333;
       background-size: cover;
       /*background-position: center center;
@@ -22,16 +26,24 @@ body {
       font-family: Verdana, sans-serif;
     }
 
+header, #header, nav, .topnav, .navbar-collapse, .menu-toggle {
+      padding: 1em;
+      background-color: #444;
+    }
+
 a:link {
     color: #eb9316;
+    /* oranje */
 }
 a:visited {
     color: #0df;
+    /* blauw */
 }
 a:hover {
     color: #fff;
 }
 a:active, blockquote {
     color: #ff6699;
+    /* roze */
     text-decoration: none;
 }

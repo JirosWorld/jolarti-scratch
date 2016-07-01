@@ -14,23 +14,23 @@
 
 <title>
    <?php
-      if (function_exists('is_tag') && is_tag()) {
-         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
-      elseif (is_archive()) {
-         wp_title(''); echo ' Archive - '; }
-      elseif (is_search()) {
-         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
-      elseif (!(is_404()) && (is_single()) || (is_page())) {
-         wp_title(''); echo ' - '; }
-      elseif (is_404()) {
-         echo 'Not Found - '; }
-      if (is_home()) {
-         bloginfo('name'); echo ' - '; bloginfo('description'); }
-      else {
-          bloginfo('name'); }
-      if ($paged>1) {
-         echo ' - page '. $paged; }
-   ?>
+if ( function_exists( 'is_tag' ) && is_tag() ) {
+  single_tag_title( "Tag Archive for &quot;" ); echo '&quot; - '; }
+elseif ( is_archive() ) {
+  wp_title( '' ); echo ' Archive - '; }
+elseif ( is_search() ) {
+  echo 'Search for &quot;'.wp_specialchars( $s ).'&quot; - '; }
+elseif ( !( is_404() ) && ( is_single() ) || ( is_page() ) ) {
+  wp_title( '' ); echo ' - '; }
+elseif ( is_404() ) {
+  echo 'Not Found - '; }
+if ( is_home() ) {
+  bloginfo( 'name' ); echo ' - '; bloginfo( 'description' ); }
+else {
+  bloginfo( 'name' ); }
+if ( $paged>1 ) {
+  echo ' - page '. $paged; }
+?>
 </title>
 
 <meta name="msvalidate.01" content="8C3799DDBAFD89B9A991FED30C380748" />
@@ -38,34 +38,29 @@
 <?php wp_head(); ?>
 </head>
 
-<body id="body-id" <?php body_class(); ?>>
-	
+<!-- ik wil elke pagina een unieke class geven zodat ik ze met CSS kan targeten -->
+<?php if ( is_front_page() ):
+  $jolarti_classes = array( 'jolarti-class', 'my-class' );
+else: $jolarti_classes = array( 'geen-jolarti-class' );
+endif;?>
+<body id="body-id" <?php body_class( $jolarti_classes ); ?>>
+
 <div id="header"><header>
-<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-<div class="description"><?php bloginfo('description'); ?></div>
-</header></div><!-- einde header-div -->
+<h1><a href="<?php echo get_option( 'home' ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
+<div class="description"><?php bloginfo( 'description' ); ?></div>
 
 <!-- Navigation navbar needs Bootstrap JS when collapsing on smaller screens -->
 <nav class="navbar navbar-default navbar-fixed-top topnav rood" id="site-navigation" class="main-navigation" role="navigation">
-        
-  <div class="container topnav">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jolarti' ); ?></button>
-    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?></span>
-    </button>
-  </div>
 
+  <div class="container topnav">
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav nav-pills navbar-right">
     <li role="presentation">
-    <a href="#home" class="smoothScroll"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jolarti' ); ?></button>
-    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?></a>
+    <?php wp_nav_menu( array( 'theme_location'=>'hoofdmenu' ) ); ?>
     </li>
     </ul>
   </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 
 </nav>
+</header></div><!-- einde header-div -->

@@ -1,5 +1,33 @@
 <?php get_header(); ?>
 
+<?php 
+/* example 1 - nav menu with (top level) menu items 1 to 3 */
+$args1 = array(
+  'theme_location' => 'hoofdmenu',
+  'menu_item_start' => 1,
+  'menu_item_end' => 1
+);
+wp_nav_menu($args1);
+
+/* example 2 - nav menu with only (top level) menu item 5 */
+$args2 = array(
+  'theme_location' => 'hoofdmenu',
+  'menu_item_start' => 2,
+  'menu_item_end' => 2
+);
+wp_nav_menu($args2);
+
+/* example 3 - nav menu with all (top level) menu items from 7 and onward */
+$args3 = array(
+  'theme_location' => 'hoofdmenu',
+  'menu_item_start' => 3,
+  'menu_item_end' => 4
+);
+wp_nav_menu($args3);
+ ?>
+
+***
+
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
