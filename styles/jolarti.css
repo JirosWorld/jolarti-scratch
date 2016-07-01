@@ -5,3 +5,10 @@ These are extra structure styles
 body {
       font-family: "Courier New", Courier, monospace;
     }
+
+#jolarti {
+      background-color: #222;
+      padding: 1em;
+      border: 2px dashed #fff;
+      border-radius: 1em;
+}

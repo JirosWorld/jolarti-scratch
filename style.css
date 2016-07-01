@@ -12,6 +12,7 @@ Tags: black, red, rainbow, one-column, right-sidebar, responsive-layout, accessi
 
 /*
 This is the default style - please note all other styles are in the CSS folder
+Note that Wordpress can only enqueue central stylesheet through 1 functions file but you can create different templates with unique divs that can be uniquely targeted anyway
 */
 
 body {

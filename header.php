@@ -38,12 +38,13 @@ if ( $paged>1 ) {
 <?php wp_head(); ?>
 </head>
 
-<!-- ik wil elke pagina een unieke class geven zodat ik ze met CSS kan targeten -->
+<!-- ik wil elke pagina Body een unieke class geven zodat ik ze met CSS kan targeten -->
 <?php if ( is_front_page() ):
   $jolarti_classes = array( 'jolarti-class', 'my-class' );
 else: $jolarti_classes = array( 'geen-jolarti-class' );
 endif;?>
 <body id="body-id" <?php body_class( $jolarti_classes ); ?>>
+<!-- einde body class -->
 
 <div id="header"><header>
 <h1><a href="<?php echo get_option( 'home' ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
