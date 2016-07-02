@@ -46,6 +46,11 @@ endif;?>
 <body id="body-id" <?php body_class( $jolarti_classes ); ?>>
 <!-- einde body class -->
 
+<?php //var_dump(get_custom_header()); ?>
+<!-- stop hier de header afbeelding in -->
+<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+<!-- einde afbeelding -->
+
 <div id="header"><header>
 <h1><a href="<?php echo get_option( 'home' ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
 <div class="description"><?php bloginfo( 'description' ); ?></div>

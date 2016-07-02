@@ -33,11 +33,37 @@ function jolarti_theme_setup() {
 add_action('init', 'jolarti_theme_setup');
 //je kunt i.p.v. init ook after_setup_theme gebruiken maar met init kun je meer toevoegen
 
+//de features body background en thumbnail en header image ziujn niet standaard dus die kun je toevoegen
+add_theme_support('custom-background');
+add_theme_support('post-thumbnails');
+//de custom background moet je er eerst bijzetten, daarna pas kun je een custom header maken die je kiest via dashboard
+// add_theme_support('custom-header');
 
+//vergeet niet in je dashboard SCREEN OPTIONS bij posts de format aan te vinken
+add_theme_support('post-formats',array('aside','image'));
+//je kunt erbij zetten video gallery quote etc...
 
+// Register Theme Features
+function jolarti_theme_features()  {
 
-
-
+	// Add theme support for Custom Header
+	$header_args = array(
+		'default-image'          => '',
+		'width'                  => 0,
+		'height'                 => 0,
+		'width'                  => 910,
+		'height'                 => 250,
+		'uploads'                => true,
+		'random-default'         => true,
+		'header-text'            => false,
+		'default-text-color'     => '',
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-header', $header_args );
+}
+add_action( 'init', 'jolarti_theme_features' );
 
 
 ?>

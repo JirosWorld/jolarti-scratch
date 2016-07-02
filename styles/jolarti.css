@@ -3,12 +3,35 @@ These are extra structure styles
 */
 
 body {
-      font-family: "Courier New", Courier, monospace;
+	font-family: "Courier New", Courier, monospace;
     }
 
 #jolarti {
-      background-color: #222;
-      padding: 1em;
-      border: 2px dashed #fff;
-      border-radius: 1em;
+	background-color: #222;
+	padding: 1em;
+	border: 2px dashed #fff;
+	border-radius: 1em;
+}
+
+.thumbnail-img {
+	display: inline;
+	float: left;
+	margin-right: 0.7em;
+	margin-bottom: 0.3em;
+}
+
+#content-image-klasse {
+	background-image: url('http://placekitten.com/350/350');
+	background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	width: 80%;
+}
+#content-aside-klasse {
+	background-color: #051; /* groen */
+	width: 80%;
+}
+#content-standaard-klasse {
+	width: 80%;
 }
